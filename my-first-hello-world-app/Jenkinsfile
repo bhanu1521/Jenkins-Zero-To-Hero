@@ -5,7 +5,9 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout your source code (e.g., from a Git repository)
-                checkout scm
+                url: 'https://github.com/bhanu1521/Jenkins-Zero-To-Hero/blob/main/my-first-hello-world-app/HelloWorld.java',
+                branch: 'main'
+                // checkout scm
             }
         }
 
