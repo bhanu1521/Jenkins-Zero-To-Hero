@@ -1,0 +1,32 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout your source code (e.g., from a Git repository)
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+            steps {
+                // Compile Java code
+                sh 'javac HelloWorld.java'
+            }
+        }
+
+        stage('Run') {
+            steps {
+                // Run the Java program
+                sh 'java HelloWorld'
+            }
+        }
+    }
+
+    post {
+        always {
+            // Cleanup steps can go here if needed
+        }
+    }
+}
